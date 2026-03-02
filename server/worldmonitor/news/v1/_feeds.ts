@@ -163,6 +163,19 @@ export const VARIANT_FEEDS: Record<string, Record<string, ServerFeed[]>> = {
       { name: 'CNBC Tech', url: 'https://www.cnbc.com/id/19854910/device/rss/rss.html' },
       { name: 'Yahoo Finance', url: 'https://finance.yahoo.com/rss/topstories' },
     ],
+    dev: [
+      { name: 'Dev.to', url: 'https://dev.to/feed' },
+      { name: 'Lobsters', url: 'https://lobste.rs/rss' },
+      { name: 'Changelog', url: 'https://changelog.com/feed' },
+      { name: 'Show HN', url: 'https://hnrss.org/show' },
+    ],
+    ipo: [
+      { name: 'IPO News', url: gn('(IPO OR "initial public offering" OR SPAC) tech when:7d') },
+      { name: 'Tech IPO News', url: gn('tech IPO OR "tech company" IPO when:7d') },
+    ],
+    producthunt: [
+      { name: 'Product Hunt', url: 'https://www.producthunt.com/feed' },
+    ],
   },
 
   finance: {
