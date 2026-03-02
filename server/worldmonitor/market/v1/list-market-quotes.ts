@@ -77,10 +77,8 @@ export async function listMarketQuotes(
     const allYahoo = [...yahooSymbols, ...missedFinnhub];
 
     // Fetch Yahoo Finance quotes (staggered to avoid 429)
-    let yahooRateLimited = false;
     if (allYahoo.length > 0) {
       const batch = await fetchYahooQuotesBatch(allYahoo);
-      yahooRateLimited = batch.rateLimited;
       for (const s of allYahoo) {
         if (quotes.some((q) => q.symbol === s)) continue;
         const yahoo = batch.results.get(s);
